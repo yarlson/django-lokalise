@@ -1,0 +1,22 @@
+# This file is part of django-lokalise.
+# https://github.com/yarlson/django-lokalise
+
+# Licensed under the BSD license:
+# http://www.opensource.org/licenses/BSD-license
+# Copyright (c) 2016, Yar Kravtsov <yarlson@gmail.com>
+
+[run]
+omit =
+    *tests.py
+branch = True
+source =
+    django_lokalise
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    from urllib.parse import parse_qs
+    except ImportError:

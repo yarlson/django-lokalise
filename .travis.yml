@@ -1,0 +1,21 @@
+# This file is part of django-lokalise.
+# https://github.com/yarlson/django-lokalise
+
+# Licensed under the BSD license:
+# http://www.opensource.org/licenses/BSD-license
+# Copyright (c) 2016, Yar Kravtsov <yarlson@gmail.com>
+
+language: python
+
+python:
+    - "2.7"
+    - "3.4"
+    - "pypy"
+
+install:
+    # install python requirements
+    - make setup
+
+script:
+    # run tests
+    - make test
