@@ -6,6 +6,5 @@ Django-Lokalise
 
 Installation
 ------------
-
 You can install Django-Lokalise From **Pypi**::
     pip install django-lokalise
