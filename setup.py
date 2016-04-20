@@ -9,7 +9,7 @@
 # Copyright (c) 2016, Yar Kravtsov <yarlson@gmail.com>
 
 from setuptools import setup, find_packages
-from django_lokalise import __version__
+from lokalise import __version__
 
 tests_require = [
     'mock',
