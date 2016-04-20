@@ -9,3 +9,27 @@ Installation
 You can install Django-Lokalise From **Pypi**::
 
   pip install django-lokalise
+
+Configuration
+=============
+First you need to add ``lokalise`` to your INSTALLED_APPS::
+
+    INSTALLED_APPS = [
+      # ...
+      'lokalise',
+    ]
+
+Than you have to add ``lokalise.middleware.ReloadTranslationsMiddleware`` middleware as early as possible ::
+
+    MIDDLEWARE_CLASSES = (
+        ...
+        'lokalise.middleware.ReloadTranslationsMiddleware',
+        ...
+    )
+
+And add to your urlpatterns::
+
+    urlpatterns = [
+      url(r'^lokalise/', include('lokalise.urls')),
+    ]
+
