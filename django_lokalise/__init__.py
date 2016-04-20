@@ -13,6 +13,7 @@ import os
 import re
 
 from django.conf import settings
+from django.core.management.commands.compilemessages import Command
 
 from django_lokalise.version import __version__  # NOQA
 
@@ -30,3 +31,12 @@ def make_dir(folder_name):
     except OSError as exception:
         if exception.errno != errno.EEXIST:
             raise
+
+
+def compile_po(full_file_path):
+    file_name = os.path.basename(full_file_path)
+    dir_name = os.path.dirname(full_file_path)
+
+    compile_command = Command()
+    compile_command.verbosity = 0
+    compile_command.compile_messages([(dir_name, file_name)])

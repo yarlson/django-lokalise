@@ -1,15 +1,15 @@
-import os
-import re
 import shutil
 import zipfile
 from StringIO import StringIO
 
+import os
+import re
+import time
 import requests
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from . import get_locale_path
-from . import make_dir
+from . import get_locale_path, make_dir, compile_po
 
 
 @csrf_exempt
@@ -36,9 +36,16 @@ def hook(request):
                             lang_path = os.path.join(os.path.join(locale_path, lang), 'LC_MESSAGES')
                             make_dir(lang_path)
 
+                            po_file = os.path.join(lang_path, "django.{0}".format(ext))
+
                             source = zip_file.open(member)
-                            target = file(os.path.join(lang_path, "django.{0}".format(ext)), "wb")
+                            target = file(po_file, "wb")
                             with source, target:
                                 shutil.copyfileobj(source, target)
+
+                            compile_po(po_file)
+
+                            current_time = time.time()
+                            os.utime(locale_path, (current_time, current_time))
 
     return HttpResponse('')
