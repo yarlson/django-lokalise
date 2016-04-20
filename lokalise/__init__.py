@@ -15,9 +15,7 @@ import re
 from django.conf import settings
 from django.core.management.commands.compilemessages import Command
 
-from django_lokalise.version import __version__  # NOQA
-
-VERSION = '0.0.1'
+from lokalise.version import __version__  # NOQA
 
 
 def get_locale_path():

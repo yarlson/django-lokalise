@@ -8,4 +8,4 @@
 # http://www.opensource.org/licenses/BSD-license
 # Copyright (c) 2016, Yar Kravtsov <yarlson@gmail.com>
 
-__version__ = '0.1.1'  # NOQA
+__version__ = '0.1.2'  # NOQA
