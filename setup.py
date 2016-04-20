@@ -51,8 +51,8 @@ Lokalise (https://lokali.se) module for Django
     packages=find_packages(),
     include_package_data=False,
     install_requires=[
-        # add your dependencies here
-        # remember to use 'package-name>=x.y.z,<x.y+1.0' notation (this way you get bugfixes)
+        "django>=1.8",
+        "requests"
     ],
     extras_require={
         'tests': tests_require,
