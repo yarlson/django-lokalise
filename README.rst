@@ -27,9 +27,10 @@ Than you have to add ``lokalise.middleware.ReloadTranslationsMiddleware`` middle
         ...
     )
 
-And add to your urlpatterns::
+Add to your urlpatterns::
 
     urlpatterns = [
       url(r'^lokalise/', include('lokalise.urls')),
     ]
 
+Add webhook at Download section of lokali.se project such as http://example.org/lokalise/hook and use Gettext(.po) format
