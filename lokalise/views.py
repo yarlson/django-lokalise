@@ -36,7 +36,7 @@ def hook(request):
                             lang_path = os.path.join(os.path.join(locale_path, lang), 'LC_MESSAGES')
                             make_dir(lang_path)
 
-                            po_file = os.path.join(lang_path, "django.{0}".format(ext))
+                            po_file = os.path.join(lang_path, "django{0}".format(ext))
 
                             source = zip_file.open(member)
                             target = file(po_file, "wb")
