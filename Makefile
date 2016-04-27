@@ -13,7 +13,7 @@ no_targets__:
 
 # install all dependencies (do not forget to create a virtualenv first)
 setup:
-	@pip install -U -e .\[tests\]
+	@pip install -r tests/requirements-test.txt
 
 # test your application (tests in the tests/ directory)
 test: unit
