@@ -28,9 +28,9 @@ tests_require = [
 setup(
     name='django-lokalise',
     version=__version__,
-    description='Lokalise (https://lokali.se) module for Django',
+    description='Lokalise (https://lokalise.co) module for Django',
     long_description='''
-Lokalise (https://lokali.se) module for Django
+Lokalise (https://lokalise.co) module for Django
 ''',
     keywords='Localization, Internationalization, Lokalise',
     author='Yar Kravtsov',

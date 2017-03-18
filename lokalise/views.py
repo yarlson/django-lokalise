@@ -1,10 +1,11 @@
-import shutil
-import zipfile
-from StringIO import StringIO
-
 import os
 import re
+import shutil
 import time
+import zipfile
+from io import StringIO
+from io import open
+
 import requests
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -17,7 +18,7 @@ def hook(request):
     file_name = request.POST.get('file')
 
     if file_name:
-        r = requests.get('https://lokali.se/{0}'.format(file_name))
+        r = requests.get('https://lokalise.co/{0}'.format(file_name))
         if r.status_code == 200:
             locale_path = get_locale_path()
 
@@ -39,7 +40,7 @@ def hook(request):
                             po_file = os.path.join(lang_path, "django{0}".format(ext))
 
                             source = zip_file.open(member)
-                            target = file(po_file, "wb")
+                            target = open(po_file, "wb")
                             with source, target:
                                 shutil.copyfileobj(source, target)
 
